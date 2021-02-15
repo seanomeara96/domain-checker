@@ -1,6 +1,6 @@
 const axios = require("axios");
 const query = require("./businessCategories");
-let fs = require("fs");
+const fs = require("fs");
 let count = 0;
 
 function checkDomains() {
@@ -17,7 +17,7 @@ function checkDomains() {
     })
     .then((res) => {
       let response = JSON.parse(res.data.slice(6));
-      console.log(response.searchResponse.results.result);
+      //console.log(response.searchResponse.results.result);
       let availableDotComDomains = [""];
       if (response.searchResponse.results.result[0].supportedResultInfo) {
         availableDotComDomains = response.searchResponse.results.result
